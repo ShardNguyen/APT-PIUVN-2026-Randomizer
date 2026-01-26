@@ -100,5 +100,4 @@ This project is developed for Van Hanh Maimai Championship tournament events.
 
 ---
 
-**Van Hanh Maimai Championship** - Tournament Controller Systemư
-piu game nhai faifai
+**Van Hanh Maimai Championship** - Tournament Controller System
