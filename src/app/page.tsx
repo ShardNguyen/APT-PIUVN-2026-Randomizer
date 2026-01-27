@@ -1,10 +1,10 @@
 'use client';
 
 import './css/embla.css'
+import './globals.css'
 import { useGameDisplay } from './hooks/useGame';
 import { Song } from './interface';
 
-import QuadRandomSlot from './components/QuadRandomSlot';
 import BanPickCarousel from './components/BanPickCarousel';
 
 // Display-only page - controlled by Controller via BroadcastChannel
@@ -24,16 +24,21 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      {/* Background
-      <iframe
-        src="/assets/prism+.html"
-        className="fixed inset-0 w-full h-full border-0"
-        style={{
-          zIndex: -1,
-          pointerEvents: 'none'
-        }}
-        title="background"
-      /> */}
+      {
+      // Background
+      // <iframe
+      //   src="/assets/prism+.html"
+      //   className="fixed inset-0 w-full h-full border-0"
+      //   style={{
+      //     zIndex: -1,
+      //     pointerEvents: 'none'
+      //   }}
+      //   title="background"
+      // />
+        // <video id='background-video' loop autoPlay>
+        //   <source src='/assets/mainBg.mp4' type='video/mp4'></source>
+        // </video>
+      }
 
       {state.phase === 'final' ? (
         /* Final Results Phase */

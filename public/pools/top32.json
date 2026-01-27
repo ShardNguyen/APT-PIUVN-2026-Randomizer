@@ -52,50 +52,5 @@
         "lv": "12",
         "diff": "EXPERT",
         "isDx": "True"
-    },
-    {
-        "id": "16",
-        "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/6b0d5a9978831eeb4fb16ed342ac12740ccba94894326e7e47433f62dcc0867e.png",
-        "artist": "Massive New Krew",
-        "title": "Supersonic Generation",
-        "lv": "11+",
-        "diff": "EXPERT",
-        "isDx": "True"
-    },
-    {
-        "id": "17",
-        "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/696469997791890500b4cb86ffce8c8b6471f5d234f50ae201a4e57f498f9fa8.png",
-        "artist": "EmoCosine",
-        "title": "Feel The Luv",
-        "lv": "11",
-        "diff": "EXPERT",
-        "isDx": "True"
-    },
-    {
-        "id": "18",
-        "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/66c9aa47b034e3b7942bacaaf1f0c2a5c27ef73114989f55f9e0687b43870e97.png",
-        "artist": "yowanecity feat.Eye",
-        "title": "ウタヒメナイトストーム",
-        "lv": "11",
-        "diff": "EXPERT",
-        "isDx": "True"
-    },
-    {
-        "title": "test",
-        "artist": "test",
-        "imgUrl": "/assets/testjacket.png",
-        "lv": "15",
-        "diff": "RE:MASTER",
-        "isDx": "False",
-        "id": "9"
-    },
-    {
-        "title": "test",
-        "artist": "test",
-        "imgUrl": "/assets/testjacket.png",
-        "lv": "13",
-        "diff": "EXPERT",
-        "isDx": "True",
-        "id": "10"
     }
 ]
