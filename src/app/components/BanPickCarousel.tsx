@@ -417,7 +417,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                         letterSpacing: '2px'
                                     }}
                                 >
-                                    TRACK {index + 1}
+                                    {/* SONG {index + 1} */}
                                 </div>
                             )}
 

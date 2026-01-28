@@ -598,8 +598,8 @@ export default function ControllerPage() {
     // Settings limits
     const maxRandom = 6;
     const minRandom = 2;
-    const maxPick = 4;
-    const minPick = 2;
+    const maxPick = 5;
+    const minPick = 1;
     const fixedCount = fixedSongs.length;
     const totalSongs = randomCount + fixedCount;
 
