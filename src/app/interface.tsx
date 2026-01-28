@@ -5,7 +5,9 @@ export interface Song {
   title: string;
   lv: string;
   diff: string;
-  isDx: string;
+  single: string;
+  double: string;
+  // isDx: string;
 }
 
 export interface RoundSetting {
