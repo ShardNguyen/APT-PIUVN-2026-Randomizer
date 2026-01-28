@@ -4,10 +4,8 @@ export interface Song {
   artist: string;
   title: string;
   lv: string;
-  diff: string;
   single: string;
   double: string;
-  // isDx: string;
 }
 
 export interface RoundSetting {
