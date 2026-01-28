@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0",
+    "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/692ae385226bd2ff2c7134b8593c195ef5d4294194c672eb33ce97394ec882ef.png",
+    "artist": "푸파",
+    "title": "PUPA",
+    "lv": "23",
+    "single": "True",
+    "double": "False"
+  },
+  {
+    "id": "1",
+    "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/692ae385226bd2ff2c7134b8593c195ef5d4294194c672eb33ce97394ec882ef.png",
+    "artist": "스푸키 마카롱",
+    "title": "Spooky Macaron",
+    "lv": "23",
+    "single": "True",
+    "double": "False"
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/692ae385226bd2ff2c7134b8593c195ef5d4294194c672eb33ce97394ec882ef.png",
+    "artist": "메가하츠",
+    "title": "MEGAHEARTZ",
+    "lv": "23",
+    "single": "True",
+    "double": "False"
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://dp4p6x0xfi5o9.cloudfront.net/maimai/img/cover/692ae385226bd2ff2c7134b8593c195ef5d4294194c672eb33ce97394ec882ef.png",
+    "artist": "데드 엔드",
+    "title": "Dead End",
+    "lv": "23",
+    "single": "True",
+    "double": "False"
+  }
+]
