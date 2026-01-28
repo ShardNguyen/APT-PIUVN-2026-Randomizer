@@ -40,6 +40,7 @@ export type MessageType =
   | 'MATCH_NEXT'
   | 'MATCH_PREV'
   | 'RESET'
+  | 'RETURN_TO_SELECTION'
   | 'UPDATE_SELECTED'
   | 'FULL_STATE_SYNC';
 

@@ -102,7 +102,6 @@ app.prepare().then(() => {
     socket.on('UPDATE_SELECTED', (payload) => {
       gameState.selectedIndex = payload.randomIndex;
       io.emit('UPDATE_SELECTED', payload.randomIndex);
-      console.log('Random index is now at: ', payload.randomIndex);
     });
 
     socket.on('BAN_SONG', (payload) => {
@@ -144,6 +143,17 @@ app.prepare().then(() => {
       gameState.currentMatchIndex = Math.max(gameState.currentMatchIndex - 1, 0);
       io.emit('MATCH_PREV', { currentMatchIndex: gameState.currentMatchIndex });
       console.log('Match prev:', gameState.currentMatchIndex);
+    });
+
+    socket.on('RETURN_TO_SELECTION', () => {
+      gameState.phase = 'banpick';
+      gameState.bannedSongs = [...gameState.bannedSongs, ...gameState.pickedSongs];
+      gameState.pickedSongs = [];
+      gameState.matchSongs = [];
+      gameState.currentMatchIndex = 0;
+      
+      io.emit('RETURN_TO_SELECTION');
+      console.log('Returned to song selection');
     });
 
     socket.on('RESET', () => {

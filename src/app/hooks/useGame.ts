@@ -169,6 +169,27 @@ export function useGameDisplay() {
       })
     );
 
+    unsubscribers.push(
+      onGameEvent('RETURN_TO_SELECTION', () => {
+        setState((prev) => ({ 
+          ...prev, 
+          phase: "banpick",
+          bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
+          pickedSongs: [],
+          matchSongs: [],
+          currentMatchIndex: 0
+        }));
+
+        // Also clear localStorage
+        try {
+          localStorage.removeItem('matchSongs');
+          localStorage.removeItem('banPickLog');
+          localStorage.removeItem('lockedTracks');
+        } catch {}
+
+      })
+    )
+
     // Reset game state when controller resets
     unsubscribers.push(
       onGameEvent('RESET', () => {
@@ -419,6 +440,21 @@ export function useGameController() {
     }));
   }, []);
 
+  const returnToSelection = useCallback(() => {
+    // Cancel any ongoing animation
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    emitGameEvent('RETURN_TO_SELECTION');
+
+    setState((prev) => ({ 
+      ...prev, 
+      phase: "banpick",
+      bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
+    }));
+  }, [])
+
   // Reset game
   const reset = useCallback(() => {
     // Cancel any ongoing animation
@@ -454,6 +490,7 @@ export function useGameController() {
     goToMatch,
     nextMatch,
     prevMatch,
+    returnToSelection,
     reset,
   };
 }

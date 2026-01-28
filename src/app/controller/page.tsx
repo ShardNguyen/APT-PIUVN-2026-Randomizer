@@ -265,11 +265,15 @@ export default function ControllerPage() {
         var refreshStart = Date.now();
         var newRandomIndex = randomIndex;
 
+        if (pickBanPoolSongs.length - pickedSongs?.length - bannedSongs?.length < 2) {
+            return;
+        }
+
         const animate = () => {
             const totalElapsed = Date.now() - animationStart;
             if (totalElapsed < 5000) {
                 if (Date.now() - refreshStart > 150) {
-                    while (newRandomIndex === randomIndex || pickedSongs.includes(pickBanPoolSongs[newRandomIndex])) {
+                    while (newRandomIndex === randomIndex || pickedSongs.includes(pickBanPoolSongs[newRandomIndex]) || bannedSongs.includes(pickBanPoolSongs[newRandomIndex]) ) {
                         newRandomIndex = Math.floor(Math.random() * pickBanPoolSongs.length);
                     }
 
@@ -285,10 +289,6 @@ export default function ControllerPage() {
         };
         animate();
     };
-
-    const stopRandom = () => {
-
-    }
 
     // Ban a song
     const handleBanSong = (song: Song) => {
@@ -326,9 +326,22 @@ export default function ControllerPage() {
             setTimeout(() => {
                 setShowFinalResults(true);
                 emitGameEvent('SHOW_FINAL_RESULTS', {});
-            }, 500);
+            }, 1500);
         }
     };
+
+    // Return to song pool selection
+    const handleReturnToSongSelection = () => {
+        setBannedSongs([...bannedSongs, ...pickedSongs]);
+        setPickedSongs([]);
+        setShowBanPick(true);
+        setShowFinalResults(false);
+        setMatchSongs([]);
+        setCurrentMatchIndex(0);
+        setIsMatchPhase(false);
+
+        emitGameEvent('RETURN_TO_SELECTION', {pickedSongs});
+    }
 
     // Reset game
     const handleGameReset = () => {
@@ -983,11 +996,11 @@ export default function ControllerPage() {
                                 </button> */}
 
                                 <button
-                                    onClick={goToMatch}
+                                    onClick={handleReturnToSongSelection}
                                     disabled={!showFinalResults}
                                     className="w-full py-2 bg-green-600 hover:bg-green-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
                                 >
-                                    Go to Match
+                                    Return To Selection
                                 </button>
 
                                 <button
