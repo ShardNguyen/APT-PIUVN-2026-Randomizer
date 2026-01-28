@@ -89,6 +89,7 @@ export default function ControllerPage() {
     const [showBanPick, setShowBanPick] = useState(false);
     const [showFinalResults, setShowFinalResults] = useState(false);
     const [selectedSongIndex, setSelectedSongIndex] = useState(0);
+    var randomIndex = Math.floor(Math.random() * pickBanPoolSongs.length);
     const lastSyncTime = useRef(0);
 
     // Match control state
@@ -214,11 +215,7 @@ export default function ControllerPage() {
     // Trigger preview (Start) - display 6 random songs
     const triggerPreview = (customCount?: number) => {
         const countToUse = customCount !== undefined ? customCount : randomCount;
-        const availablePool = songData.filter(
-            song => !fixedSongs.find(f => f.id === song.id) &&
-                song.id !== lockedTracks.track3?.id &&
-                song.id !== lockedTracks.track4?.id
-        );
+        const availablePool = songData;
 
         if (availablePool.length < countToUse) {
             alert('Not enough songs in pool for preview!');
@@ -234,56 +231,64 @@ export default function ControllerPage() {
     };
 
     // Trigger random from controller
-    const triggerRandom = () => {
-        const availablePool = songData.filter(
-            song => !fixedSongs.find(f => f.id === song.id) &&
-                song.id !== lockedTracks.track3?.id &&
-                song.id !== lockedTracks.track4?.id
-        );
+    const triggerStartProcess = () => {
+        const availablePool = songData;
 
         if (availablePool.length < randomCount) {
             alert('Not enough songs in pool!');
             return;
         }
 
-        // Shuffle and pick
-        const shuffled = [...availablePool].sort(() => Math.random() - 0.5);
-        const results = shuffled.slice(0, randomCount);
+        const results = availablePool;
 
         setRandomResults(results);
         setShowBanPick(false);
-        setShowFinalResults(false);
         setBannedSongs([]);
         setPickedSongs([]);
         setSelectedSongIndex(0);
+        emitGameEvent('RANDOM_COMPLETE', { results });
 
+        setPickBanPoolSongs([...randomResults]);
+        setShowBanPick(true);
+        setShowFinalResults(false);
+        emitGameEvent('SHOW_BAN_PICK', {});
+    };
+
+    // Go to ban/pick phase
+    const startRandom = () => {
         // Send animation pool to display pages with randomCount
-        const animationPool = shuffled.slice(0, Math.min(60, availablePool.length));
-        emitGameEvent('RANDOM_START', { animationPool, randomCount });
+        // const animationPool = shuffled.slice(0, Math.min(60, availablePool.length));
+        // emitGameEvent('RANDOM_START', { animationPool, randomCount });
 
         // Animate for 3 seconds then show results
         const animationStart = Date.now();
+        var refreshStart = Date.now();
+        var newRandomIndex = randomIndex;
+
         const animate = () => {
-            const elapsed = Date.now() - animationStart;
-            if (elapsed < 3000) {
-                const slots = shuffled.sort(() => Math.random() - 0.5).slice(0, randomCount);
-                emitGameEvent('RANDOM_ANIMATION', { slots });
+            const totalElapsed = Date.now() - animationStart;
+            if (totalElapsed < 5000) {
+                if (Date.now() - refreshStart > 150) {
+                    while (newRandomIndex === randomIndex || pickedSongs.includes(pickBanPoolSongs[newRandomIndex])) {
+                        newRandomIndex = Math.floor(Math.random() * pickBanPoolSongs.length);
+                    }
+
+                    randomIndex = newRandomIndex;
+                    setSelectedSongIndex(randomIndex);
+                    refreshStart = Date.now();
+                    
+                    // Sync via BroadcastChannel
+                    emitGameEvent('UPDATE_SELECTED', { randomIndex });
+                }
                 requestAnimationFrame(animate);
-            } else {
-                emitGameEvent('RANDOM_COMPLETE', { results });
             }
         };
         animate();
     };
 
-    // Go to ban/pick phase
-    const goToBanPickPhase = () => {
-        if (randomResults.length === 0) return;
-        setPickBanPoolSongs([...randomResults, ...fixedSongs]);
-        setShowBanPick(true);
-        setShowFinalResults(false);
-        emitGameEvent('SHOW_BAN_PICK', {});
-    };
+    const stopRandom = () => {
+
+    }
 
     // Ban a song
     const handleBanSong = (song: Song) => {
@@ -952,29 +957,30 @@ export default function ControllerPage() {
 
                             {/* Control Buttons */}
                             <div className="space-y-2">
+
                                 <button
+                                    onClick={triggerStartProcess}
+                                    disabled={isLoadingPool}
+                                    className="w-full py-2 bg-purple-600 hover:bg-purple-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
+                                >
+                                    Start Process
+                                </button>
+
+                                <button
+                                    onClick={startRandom}
+                                    disabled={pickBanPoolSongs.length === 0}
+                                    className="w-full py-2 bg-yellow-600 hover:bg-yellow-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
+                                >
+                                    Start Random
+                                </button>
+                                
+                                {/* <button
                                     onClick={() => triggerPreview()}
                                     disabled={isLoadingPool}
                                     className="w-full py-2 bg-blue-600 hover:bg-blue-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
                                 >
-                                    Start
-                                </button>
-
-                                <button
-                                    onClick={triggerRandom}
-                                    disabled={isLoadingPool}
-                                    className="w-full py-2 bg-purple-600 hover:bg-purple-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
-                                >
-                                    Random
-                                </button>
-
-                                <button
-                                    onClick={goToBanPickPhase}
-                                    disabled={randomResults.length === 0 || showBanPick}
-                                    className="w-full py-2 bg-yellow-600 hover:bg-yellow-500 disabled:bg-gray-600 text-white rounded-lg font-bold transition-colors"
-                                >
-                                    Go to Ban/Pick
-                                </button>
+                                    Show song pool
+                                </button> */}
 
                                 <button
                                     onClick={goToMatch}
@@ -1600,7 +1606,7 @@ export default function ControllerPage() {
                         <p className="text-gray-500 text-xs">No actions yet...</p>
                     ) : (
                         <div className="max-h-[600px] overflow-y-auto space-y-1">
-                            {banPickLog.map((entry, idx) => (
+                            {/* {banPickLog.map((entry, idx) => (
                                 <div
                                     key={idx}
                                     className={`flex items-center gap-2 px-2 py-1 rounded ${entry.type === 'ban' ? 'bg-red-900/30' : 'bg-green-900/30'}`}
@@ -1614,7 +1620,7 @@ export default function ControllerPage() {
                                         <span className={`text-xs ${getDiffColor(entry.song.diff)}`}>{entry.song.diff} {entry.song.lv}</span>
                                     </div>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     )}
                 </div>

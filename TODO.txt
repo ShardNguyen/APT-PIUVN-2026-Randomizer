@@ -1,0 +1,2 @@
+1. Add border for randomizing indicator (Hint: Do it in BanPickCarousel)
+2. Only make border appear when the current index is shown at it

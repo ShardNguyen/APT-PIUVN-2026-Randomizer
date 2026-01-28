@@ -85,7 +85,8 @@ export interface GameState {
   bannedSongs: any[];
   pickedSongs: any[];
   animationPool: any[];
-  
+  selectedIndex: number;
+
   // Match display
   matchSongs: any[];
   currentMatchIndex: number;
@@ -105,6 +106,7 @@ export const DEFAULT_GAME_STATE: GameState = {
   bannedSongs: [],
   pickedSongs: [],
   animationPool: [],
+  selectedIndex: 0,
   matchSongs: [],
   currentMatchIndex: 0,
 };
@@ -123,6 +125,7 @@ export type MessageType =
   | 'MATCH_NEXT'
   | 'MATCH_PREV'
   | 'RESET'
+  | 'UPDATE_SELECTED'
   | 'FULL_STATE_SYNC';
 
 // Helper functions to emit events

@@ -58,6 +58,7 @@ export default function Home() {
             showFinalOnly={true}
             lockedTracks={state.lockedTracks}
             hiddenTracks={state.hiddenTracks}
+            selectedIndex={0}
           />
         </div>
       ) : state.phase === 'banpick' ? (
@@ -72,6 +73,7 @@ export default function Home() {
             remainingBans={state.banCount - state.bannedSongs.length}
             remainingPicks={state.pickCount - state.pickedSongs.length}
             onComplete={() => { }}
+            selectedIndex={state.selectedIndex}
           />
         </div>
       ) : state.phase === 'random' ? (
@@ -169,7 +171,7 @@ function QuadRandomSlotDisplay({
         style={{
           gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
           maxWidth: gridColumns >= 4 ? '1600px' : '1200px',
-          margin: '0 auto'
+          margin: '0 auto',
         }}
       >
         {displayedSlots.map((song, index) => (
@@ -180,7 +182,7 @@ function QuadRandomSlotDisplay({
               width: FRAME_OVERLAY_W + 100, // Add 100 to fit the diff text and diff level
               height: FRAME_OVERLAY_H,
               transform: isAnimating ? 'scale(0.98)' : 'scale(1)',
-              transition: 'transform 0.1s ease-out'
+              transition: 'transform 0.1s ease-out',
             }}
           >
             {/* Jacket image */}

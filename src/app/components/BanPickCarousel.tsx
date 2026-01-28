@@ -17,6 +17,7 @@ interface BanPickCarouselProps {
     showFinalOnly?: boolean;
     lockedTracks?: { track3?: Song; track4?: Song };
     hiddenTracks?: { track3Hidden: boolean; track4Hidden: boolean };
+    selectedIndex: number;
 }
 
 const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
@@ -30,9 +31,10 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
     onComplete,
     showFinalOnly = false,
     lockedTracks = {},
-    hiddenTracks = { track3Hidden: false, track4Hidden: false }
+    hiddenTracks = { track3Hidden: false, track4Hidden: false },
+    selectedIndex
 }) => {
-    const [selectedIndex, setSelectedIndex] = useState(0);
+
     const preloadedImagesRef = useRef<Set<string>>(new Set());
 
     // Check if a song is a hidden locked track
@@ -116,67 +118,68 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
     const isPicked = (song: Song) => pickedSongs.some(s => s.id === song.id);
     const isProcessed = (song: Song) => isBanned(song) || isPicked(song);
     const isCompleted = remainingBans === 0 && remainingPicks === 0;
-    const isBanPhase = remainingBans > 0;
-    const isPickPhase = remainingBans === 0 && remainingPicks > 0;
+    console.log(selectedIndex);
+    // const isBanPhase = remainingBans > 0;
+    // const isPickPhase = remainingBans === 0 && remainingPicks > 0;
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowLeft') {
-                setSelectedIndex(prev => {
-                    let newIndex = prev - 1;
-                    // Skip banned songs
-                    while (newIndex >= 0 && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
-                        newIndex--;
-                    }
-                    return Math.max(0, newIndex);
-                });
-            } else if (e.key === 'ArrowRight') {
-                setSelectedIndex(prev => {
-                    let newIndex = prev + 1;
-                    // Skip banned songs
-                    while (newIndex < songs.length && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
-                        newIndex++;
-                    }
-                    return Math.min(songs.length - 1, newIndex);
-                });
-            } else if (e.key === 'ArrowUp') {
-                setSelectedIndex(prev => {
-                    let newIndex = prev - gridColumns;
-                    // Skip banned songs
-                    while (newIndex >= 0 && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
-                        newIndex--;
-                    }
-                    return Math.max(0, newIndex);
-                });
-            } else if (e.key === 'ArrowDown') {
-                setSelectedIndex(prev => {
-                    let newIndex = prev + gridColumns;
-                    // Skip banned songs
-                    while (newIndex < songs.length && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
-                        newIndex++;
-                    }
-                    return Math.min(songs.length - 1, newIndex);
-                });
-            }
-            else if (e.key === 'Enter') {
-                if (isCompleted && onComplete) {
-                    onComplete();
-                } else {
-                    const selectedSong = songs[selectedIndex];
-                    if (!isProcessed(selectedSong)) {
-                        if (remainingBans > 0) {
-                            onBan(selectedSong);
-                        } else if (remainingPicks > 0) {
-                            onPick(selectedSong);
-                        }
-                    }
-                }
-            }
-        };
+    // useEffect(() => {
+    //     const handleKeyDown = (e: KeyboardEvent) => {
+    //         if (e.key === 'ArrowLeft') {
+    //             setSelectedIndex(prev => {
+    //                 let newIndex = prev - 1;
+    //                 // Skip banned songs
+    //                 while (newIndex >= 0 && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
+    //                     newIndex--;
+    //                 }
+    //                 return Math.max(0, newIndex);
+    //             });
+    //         } else if (e.key === 'ArrowRight') {
+    //             setSelectedIndex(prev => {
+    //                 let newIndex = prev + 1;
+    //                 // Skip banned songs
+    //                 while (newIndex < songs.length && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
+    //                     newIndex++;
+    //                 }
+    //                 return Math.min(songs.length - 1, newIndex);
+    //             });
+    //         } else if (e.key === 'ArrowUp') {
+    //             setSelectedIndex(prev => {
+    //                 let newIndex = prev - gridColumns;
+    //                 // Skip banned songs
+    //                 while (newIndex >= 0 && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
+    //                     newIndex--;
+    //                 }
+    //                 return Math.max(0, newIndex);
+    //             });
+    //         } else if (e.key === 'ArrowDown') {
+    //             setSelectedIndex(prev => {
+    //                 let newIndex = prev + gridColumns;
+    //                 // Skip banned songs
+    //                 while (newIndex < songs.length && (isBanned(songs[newIndex]) || isPicked(songs[newIndex]))) {
+    //                     newIndex++;
+    //                 }
+    //                 return Math.min(songs.length - 1, newIndex);
+    //             });
+    //         }
+    //         else if (e.key === 'Enter') {
+    //             if (isCompleted && onComplete) {
+    //                 onComplete();
+    //             } else {
+    //                 const selectedSong = songs[selectedIndex];
+    //                 if (!isProcessed(selectedSong)) {
+    //                     if (remainingBans > 0) {
+    //                         onBan(selectedSong);
+    //                     } else if (remainingPicks > 0) {
+    //                         onPick(selectedSong);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     };
 
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [selectedIndex, songs, onBan, onPick, remainingBans, remainingPicks, isCompleted, onComplete, bannedSongs, pickedSongs, gridColumns]);
+    //     window.addEventListener('keydown', handleKeyDown);
+    //     return () => window.removeEventListener('keydown', handleKeyDown);
+    // }, [selectedIndex, songs, onBan, onPick, remainingBans, remainingPicks, isCompleted, onComplete, bannedSongs, pickedSongs, gridColumns]);
 
     // For sizing purposes - 1.25x scale
     const FRAME_OVERLAY_W = 375;
@@ -198,6 +201,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                 }}
             >
                 {displaySongs.map((song, index) => {
+                    // Task: Sync original index
                     const originalIndex = songs.findIndex(s => s.id === song.id);
                     const isSelected = !showFinalOnly && originalIndex === selectedIndex;
                     const banned = isBanned(song);
@@ -215,6 +219,8 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                             style={{
                                 width: FRAME_OVERLAY_W,
                                 height: FRAME_OVERLAY_H,
+                                borderWidth: '5px',
+                                borderColor: isSelected ? '#EFFD5FFF' : '#00000000',
                                 flexShrink: 0,
                                 transform: showFinalOnly
                                     ? 'scale(1)'

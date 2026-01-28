@@ -107,6 +107,16 @@ export function useGameDisplay() {
     );
 
     unsubscribers.push(
+      onGameEvent('UPDATE_SELECTED', (payload: any) => {
+        const newIndex = typeof payload === 'number' ? payload : payload?.randomIndex ?? payload?.randomIndex ?? 0;
+        setState((prev) => ({
+          ...prev,
+          selectedIndex: newIndex,
+        }));
+      })
+    );
+
+    unsubscribers.push(
       onGameEvent('BAN_SONG', (payload: any) => {
         setState((prev) => ({
           ...prev,
@@ -345,6 +355,15 @@ export function useGameController() {
     setState((prev) => ({ ...prev, phase: "banpick" }));
   }, []);
 
+  // Update selected index
+  const updateSelected = useCallback((randomIndex: number) => {
+    emitGameEvent('UPDATE_SELECTED', { randomIndex });
+    setState((prev) => ({
+      ...prev,
+      selectedIndex: randomIndex,
+    }));
+  }, []);
+
   // Ban a song
   const banSong = useCallback((song: Song) => {
     emitGameEvent('BAN_SONG', { song });
@@ -428,6 +447,7 @@ export function useGameController() {
     updateSettings,
     startRandom,
     showBanPick,
+    updateSelected,
     banSong,
     pickSong,
     showFinalResults,

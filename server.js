@@ -27,6 +27,7 @@ let gameState = {
   bannedSongs: [],
   pickedSongs: [],
   animationPool: [],
+  selectedIndex: 0,
   matchSongs: [],
   currentMatchIndex: 0,
 };
@@ -96,6 +97,12 @@ app.prepare().then(() => {
       gameState.phase = 'banpick';
       io.emit('SHOW_BAN_PICK');
       console.log('Showing ban/pick phase');
+    });
+
+    socket.on('UPDATE_SELECTED', (payload) => {
+      gameState.selectedIndex = payload.randomIndex;
+      io.emit('UPDATE_SELECTED', payload.randomIndex);
+      console.log('Random index is now at: ', payload.randomIndex);
     });
 
     socket.on('BAN_SONG', (payload) => {

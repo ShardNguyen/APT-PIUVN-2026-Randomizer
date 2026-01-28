@@ -40,6 +40,7 @@ export type MessageType =
   | 'MATCH_NEXT'
   | 'MATCH_PREV'
   | 'RESET'
+  | 'UPDATE_SELECTED'
   | 'FULL_STATE_SYNC';
 
 export interface ChannelMessage {
