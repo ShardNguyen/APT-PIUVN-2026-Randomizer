@@ -6,9 +6,9 @@ import { emitGameEvent, getSocket, onGameEvent } from '../lib/socketClient';
 
 // Pool file mapping
 const POOL_FILES: Record<string, string> = {
-    newbieQual1: '/pools/N1 - newbieQual1.json',
-    newbieQual2: '/pools/N2 - newbieQual2.json',
-    newbieSemi: '/pools/N3 - newbieSemi.json',
+    newbieQual1: '/pools/M - Quarter.json',
+    newbieQual2: '/pools/M - Semifinal.json',
+    newbieSemi: '/pools/M - Final.json',
     newbieFinals: '/pools/N4 - newbieFinals.json',
     proQual: '/pools/P1 - proTop3216.json',
     proTop8: '/pools/P2 - proTop8.json',
@@ -19,9 +19,9 @@ const POOL_FILES: Record<string, string> = {
 
 // Available pools
 const POOL_OPTIONS = [
-    { id: 'newbieQual1', name: 'Bảng dưới - Vòng loại 1', file: 'N1 - newbieQual1.json' },
-    { id: 'newbieQual2', name: 'Bảng dưới - Vòng loại 2', file: 'N2 - newbieQual2.json' },
-    { id: 'newbieSemi', name: 'Bảng dưới - Bán kết', file: 'N3 - newbieSemi.json' },
+    { id: 'newbieQual1', name: 'Tứ kết', file: 'M - Quarter.json' },
+    { id: 'newbieQual2', name: 'Bán kết', file: 'M - Semifinal.json' },
+    { id: 'newbieSemi', name: 'Chung kết', file: 'M - Final.json' },
     { id: 'newbieFinals', name: 'Bảng dưới - Chung kết', file: 'N4 - newbieFinals.json' },
     { id: 'proQual', name: 'Bảng trên - Vòng 32 và 16', file: 'P1 - proTop3216.json' },
     { id: 'proTop8', name: 'Bảng trên - Vòng 8', file: 'P2 - proTop8.json' },
