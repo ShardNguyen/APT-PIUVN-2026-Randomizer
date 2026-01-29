@@ -246,7 +246,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                     height: showFinalOnly && isHiddenLockedTrack(song) ? FRAME_H * 1.1 : FRAME_H,
                                     objectFit: 'cover',
                                     left: '50%',
-                                    top: '50%',
+                                    top: '46%',
                                     transform: `translate(-50%, -50%) translateY(-${FRAME_OVERLAY_H / 13}px)`,
                                     zIndex: 1,
                                     filter: (banned || notChosen) ? 'grayscale(100%)' : 'none',
@@ -273,17 +273,17 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
 
                             {/* Diff + Lv - centered with gap */}
                             <div
-                                className="absolute"
+                                className="absolute custom-diff-font"
                                 style={{
                                     left: '50%',
                                     transform: 'translateX(-50%)',
-                                    bottom: FRAME_OVERLAY_H * 0.235,
+                                    bottom: FRAME_OVERLAY_H * 0.275,
                                     zIndex: 4,
                                     pointerEvents: 'none',
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center',
-                                    gap: '4px'
+                                    gap: '10px'
                                 }}
                             >
                                 <div
@@ -340,14 +340,15 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 style={{
                                     left: '50%',
                                     transform: 'translateX(-50%)',
-                                    bottom: FRAME_OVERLAY_H * 0.145,
-                                    width: FRAME_OVERLAY_W * 0.72,
+                                    bottom: FRAME_OVERLAY_H * 0.18,
+                                    width: FRAME_OVERLAY_W * 0.73,
+                                    backgroundColor: '#00000090',
                                     textAlign: 'center',
                                     zIndex: 4,
                                     pointerEvents: 'none',
                                     overflow: 'hidden',
                                     clipPath: 'inset(0)',
-                                    height: `${TITLE_FONT_SIZE + 4}px`,
+                                    height: `${TITLE_FONT_SIZE + 20}px`,
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center'
@@ -357,7 +358,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                     style={{
                                         fontWeight: 800,
                                         fontSize: TITLE_FONT_SIZE,
-                                        color: '#000',
+                                        color: '#FFF',
                                         whiteSpace: 'nowrap',
                                         animation: (!showFinalOnly || !isHiddenLockedTrack(song)) && song.title.length > 20 ? 'marquee 15s linear infinite' : 'none',
                                         display: 'inline-block'
@@ -374,7 +375,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 style={{
                                     left: '51%',
                                     transform: 'translateX(-50%)',
-                                    bottom: FRAME_OVERLAY_H * 0.053,
+                                    bottom: FRAME_OVERLAY_H * 0.11,
                                     width: FRAME_OVERLAY_W * 0.73,
                                     textAlign: 'center',
                                     zIndex: 4,
@@ -390,7 +391,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 <div
                                     style={{
                                         fontSize: 12,
-                                        color: '#000',
+                                        color: '#FFF',
                                         whiteSpace: 'nowrap',
                                         animation: (!showFinalOnly || !isHiddenLockedTrack(song)) && song.artist.length > 30 ? 'marquee 18s linear infinite' : 'none',
                                         display: 'inline-block'

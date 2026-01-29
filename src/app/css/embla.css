@@ -164,10 +164,18 @@ body {
   src: url('../../../public/assets/Fonts/UVNVan_B.TTF');
 }
 
+@font-face {
+  font-family: Xolonium;
+  src: url('../../../public/assets/Fonts/Xolonium-Regular.ttf');
+}
+
 .custom-title-font {
   font-family: UVNVan, "Times New Roman";
 }
 
+.custom-diff-font {
+  font-family: Xolonium, "Times New Roman";
+}
 /* Transparent background for OBS overlay */
 .transparent-bg {
   background: transparent !important;
