@@ -103,15 +103,13 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
         let diffName = diff.toLowerCase();
 
         // Handle Re:MASTER -> re
-        if (diffName.includes('re:master') || diffName === 're:master') {
-            diffName = 're';
-        } else if (diffName.includes('master')) {
-            diffName = 'master';
+        if (diffName.includes('master')) {
+            diffName = 'double';
         } else if (diffName.includes('expert')) {
-            diffName = 'expert';
+            diffName = 'single';
         }
 
-        return `/assets/${diffName}-${type}.png`;
+        return `/assets/bg_diff_${diffName}.png`;
     };
 
     const isBanned = (song: Song) => bannedSongs.some(s => s.id === song.id);
@@ -201,7 +199,6 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                 }}
             >
                 {displaySongs.map((song, index) => {
-                    // Task: Sync original index
                     const originalIndex = songs.findIndex(s => s.id === song.id);
                     const isSelected = !showFinalOnly && originalIndex === selectedIndex;
                     const banned = isBanned(song);
