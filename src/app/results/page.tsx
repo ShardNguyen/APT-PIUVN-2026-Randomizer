@@ -23,7 +23,7 @@ export default function Results() {
             <Image src={song.imgUrl} alt={song.title} width={150} height={150} />
             <h3>{song.title}</h3>
             <p>{song.artist}</p>
-            <p>{song.lv} {song.diff}</p>
+            <p>{song.lv}</p>
           </div>
         ))}
       </div>
