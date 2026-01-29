@@ -1,37 +1,37 @@
 [
   {
     "name": "Newbie Semi-Final",
-    "totalBanPick": 6,
+    "totalBanPick": 4,
     "random": 4,
-    "ban": 2,
-    "pick": 2
+    "ban": 0,
+    "pick": 1
   },
   {
     "name": "Newbie Final",
-    "totalBanPick": 7,
+    "totalBanPick": 4,
     "random": 4,
-    "ban": 2,
-    "pick": 2
+    "ban": 0,
+    "pick": 1
   },
   {
     "name": "Pro Top 8",
-    "totalBanPick": 5,
-    "random": 2,
-    "ban": 2,
-    "pick": 2
+    "totalBanPick": 4,
+    "random": 4,
+    "ban": 0,
+    "pick": 1
   },
   {
     "name": "Pro Semi-Final",
-    "totalBanPick": 5,
-    "random": 2,
-    "ban": 2,
-    "pick": 2
+    "totalBanPick": 4,
+    "random": 4,
+    "ban": 1,
+    "pick": 1
   },
     {
     "name": "Pro Final",
-    "totalBanPick": 7,
-    "random": 3,
-    "ban": 2,
-    "pick": 2
+    "totalBanPick": 4,
+    "random": 4,
+    "ban": 1,
+    "pick": 1
   }
 ]
