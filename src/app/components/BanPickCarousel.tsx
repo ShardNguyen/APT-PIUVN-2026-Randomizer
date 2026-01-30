@@ -204,7 +204,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                     const banned = isBanned(song);
                     const picked = isPicked(song);
                     const processed = isProcessed(song);
-                    const notChosen = false;
+                    const notChosen = !picked && isCompleted;
                     const shouldHide = showFinalOnly && (banned || notChosen);
 
                     if (shouldHide) return null;
@@ -222,7 +222,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 transform: showFinalOnly
                                     ? 'scale(1)'
                                     : picked
-                                        ? 'scale(1.05) translateY(-10px)'
+                                        ? 'scale(1.15) translateY(-24px)'
                                         : banned
                                             ? 'scale(0.85) translateY(15px) rotateZ(-2deg)'
                                             : notChosen
@@ -338,10 +338,10 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                             <div
                                 className="absolute custom-title-font"
                                 style={{
-                                    left: '50%',
+                                    left: '50.5%',
                                     transform: 'translateX(-50%)',
                                     bottom: FRAME_OVERLAY_H * 0.18,
-                                    width: FRAME_OVERLAY_W * 0.73,
+                                    width: FRAME_OVERLAY_W * 0.72,
                                     backgroundColor: '#00000090',
                                     textAlign: 'center',
                                     zIndex: 4,

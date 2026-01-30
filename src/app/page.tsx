@@ -47,7 +47,6 @@ export default function Home() {
             style={{ 
               textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 4px 8px rgba(0,0,0,0.3)' 
             }}>
-            RANDOM RESULT
           </h2>
           <BanPickCarousel
             songs={finalSongs}
