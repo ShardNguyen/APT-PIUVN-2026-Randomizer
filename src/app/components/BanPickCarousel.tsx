@@ -217,7 +217,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 width: FRAME_OVERLAY_W,
                                 height: FRAME_OVERLAY_H,
                                 borderWidth: '5px',
-                                borderColor: isSelected ? '#EFFD5F00' : '#00000000',
+                                borderColor: isSelected ? '#EFFD5FFF' : '#00000000',
                                 flexShrink: 0,
                                 transform: showFinalOnly
                                     ? 'scale(1)'
