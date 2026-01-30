@@ -174,7 +174,7 @@ export function useGameDisplay() {
         setState((prev) => ({ 
           ...prev, 
           phase: "banpick",
-          bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
+          // bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
           pickedSongs: [],
           matchSongs: [],
           currentMatchIndex: 0
@@ -450,7 +450,7 @@ export function useGameController() {
     setState((prev) => ({ 
       ...prev, 
       phase: "banpick",
-      bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
+      // bannedSongs: [...prev.bannedSongs, ...prev.pickedSongs],
     }));
   }, [])
 
