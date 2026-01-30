@@ -58,7 +58,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
         if (count === 2) return 2;
         if (count === 3) return 3;
         if (count === 4) return 4;
-        if (count === 5) return 3; // 3 columns (row 1: 3, row 2: 2)
+        if (count === 5) return 5; // 3 columns (row 1: 3, row 2: 2)
         if (count === 6) return 3;
         if (count === 7) return 4;
         if (count === 8) return 4;
@@ -87,10 +87,10 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
 
     const getDiffColor = (difficulty: string) => {
         switch (difficulty) {
-            case 'EXPERT':
-                return '#ef4444';
-            case 'MASTER':
-                return '#9333ea';
+            case 'SINGLE':
+                return '#bb3535';
+            case 'DOUBLE':
+                return '#157234';
             case 'RE:MASTER':
                 return '#ec4899';
             default:
@@ -103,9 +103,9 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
         let diffName = diff.toLowerCase();
 
         // Handle Re:MASTER -> re
-        if (diffName.includes('master')) {
+        if (diffName.includes('double')) {
             diffName = 'double';
-        } else if (diffName.includes('expert')) {
+        } else if (diffName.includes('single')) {
             diffName = 'single';
         }
 
@@ -204,7 +204,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                     const banned = isBanned(song);
                     const picked = isPicked(song);
                     const processed = isProcessed(song);
-                    const notChosen = !processed && isCompleted;
+                    const notChosen = false;
                     const shouldHide = showFinalOnly && (banned || notChosen);
 
                     if (shouldHide) return null;
@@ -217,7 +217,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 width: FRAME_OVERLAY_W,
                                 height: FRAME_OVERLAY_H,
                                 borderWidth: '5px',
-                                borderColor: isSelected ? '#EFFD5FFF' : '#00000000',
+                                borderColor: isSelected ? '#EFFD5F00' : '#00000000',
                                 flexShrink: 0,
                                 transform: showFinalOnly
                                     ? 'scale(1)'
@@ -358,7 +358,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                     style={{
                                         fontWeight: 800,
                                         fontSize: TITLE_FONT_SIZE,
-                                        color: '#FFF',
+                                        color: '#f1f1f1',
                                         whiteSpace: 'nowrap',
                                         animation: (!showFinalOnly || !isHiddenLockedTrack(song)) && song.title.length > 20 ? 'marquee 15s linear infinite' : 'none',
                                         display: 'inline-block'
@@ -390,8 +390,8 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                             >
                                 <div
                                     style={{
-                                        fontSize: 12,
-                                        color: '#FFF',
+                                        fontSize: 16,
+                                        color: '#f1f1f1',
                                         whiteSpace: 'nowrap',
                                         animation: (!showFinalOnly || !isHiddenLockedTrack(song)) && song.artist.length > 30 ? 'marquee 18s linear infinite' : 'none',
                                         display: 'inline-block'
@@ -415,7 +415,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                         letterSpacing: '2px'
                                     }}
                                 >
-                                    {/* SONG {index + 1} */}
+                                    RESULT
                                 </div>
                             )}
 

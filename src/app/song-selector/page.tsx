@@ -16,27 +16,25 @@ const ensureIds = (songs: any[]): Song[] => {
 
 // Pool file mapping - same as main page
 const POOL_FILES: Record<string, string> = {
-  newbieQual1: '/pools/N1 - newbieQual1.json',
-  newbieQual2: '/pools/N2 - newbieQual2.json',
-  newbieSemi: '/pools/N3 - newbieSemi.json',
-  newbieFinals: '/pools/N4 - newbieFinals.json',
-  proQual: '/pools/P1 - proTop3216.json',
-  proTop8: '/pools/P2 - proTop8.json',
-  proSemi: '/pools/P3 - proSemi.json',
-  proFinals: '/pools/P4 - proFinals.json',
+  newbieQuarter: '/pools/N1 - newbieQuarter.json',
+  newbieSemi: '/pools/N2 - newbieSemi.json',
+  newbieFinals: '/pools/N3 - newbieFinals.json',
+  proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
+  proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
+  proMaleSemi: '/pools/PM1 - proMaleSemi.json',
+  proMaleFinals: '/pools/PM2 - proMaleFinals.json',
   top32: '/pools/top32.json',
 };
 
 const POOL_OPTIONS = [
-  { id: 'newbieQual1', name: 'Bảng dưới - Vòng loại 1' },
-  { id: 'newbieQual2', name: 'Bảng dưới - Vòng loại 2' },
-  { id: 'newbieSemi', name: 'Bảng dưới - Bán kết' },
-  { id: 'newbieFinals', name: 'Bảng dưới - Chung kết' },
-  { id: 'proQual', name: 'Bảng trên - Vòng 32 và 16' },
-  { id: 'proTop8', name: 'Bảng trên - Vòng 8' },
-  { id: 'proSemi', name: 'Bảng trên - Bán kết' },
-  { id: 'proFinals', name: 'Bảng trên - Chung kết' },
-  { id: 'top32', name: 'Top 32 (Custom)' },
+  { id: 'newbieQuarter', name: 'Bán chuyên - Tứ kết', file: 'N1 - newbieQuarter.json' },
+  { id: 'newbieSemi', name: 'Bán chuyên - Bán kết', file: 'N2 - newbieSemi.json' },
+  { id: 'newbieFinals', name: 'Bán chuyên - Chung kết', file: 'N3 - newbieFinals.json' },
+  { id: 'proFemaleSemi', name: 'Chuyên nữ - Bán kết', file: 'PF1 - proFemaleSemi.json' },
+  { id: 'proFemaleFinals', name: 'Chuyên nữ - Chung kết', file: 'PF2 - proFemaleFinals.json' },
+  { id: 'proMaleSemi', name: 'Chuyên nam - Bán kết', file: 'PM1 - proMaleSemi.json' },
+  { id: 'proMaleFinals', name: 'Chuyên nam - Chung kết', file: 'PM2 - proMaleFinals.json' },
+  { id: 'top32', name: 'Top 32 (Custom)', file: 'top32.json' },
 ];
 
 export default function SongSelector() {

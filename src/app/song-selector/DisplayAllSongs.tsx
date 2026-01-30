@@ -301,10 +301,10 @@ const DisplayAll: React.FC<DisplayAllProps> = ({
         // Handle Re:MASTER -> re
         if (diffName.includes('re:master') || diffName === 're:master') {
             diffName = 're';
-        } else if (diffName.includes('master')) {
-            diffName = 'master';
-        } else if (diffName.includes('expert')) {
-            diffName = 'expert';
+        } else if (diffName.includes('double')) {
+            diffName = 'double';
+        } else if (diffName.includes('single')) {
+            diffName = 'single';
         }
 
         return `/assets/${diffName}-${type}.png`;

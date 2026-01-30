@@ -5,14 +5,13 @@ import { Song } from '../interface';
 
 // Available pools
 const POOL_OPTIONS = [
-    { id: 'newbieQual1', name: 'Bảng dưới - Vòng loại 1', file: 'N1 - newbieQual1.json' },
-    { id: 'newbieQual2', name: 'Bảng dưới - Vòng loại 2', file: 'N2 - newbieQual2.json' },
-    { id: 'newbieSemi', name: 'Bảng dưới - Bán kết', file: 'N3 - newbieSemi.json' },
-    { id: 'newbieFinals', name: 'Bảng dưới - Chung kết', file: 'N4 - newbieFinals.json' },
-    { id: 'proQual', name: 'Bảng trên - Vòng 32 và 16', file: 'P1 - proTop3216.json' },
-    { id: 'proTop8', name: 'Bảng trên - Vòng 8', file: 'P2 - proTop8.json' },
-    { id: 'proSemi', name: 'Bảng trên - Bán kết', file: 'P3 - proSemi.json' },
-    { id: 'proFinals', name: 'Bảng trên - Chung kết', file: 'P4 - proFinals.json' },
+    { id: 'newbieQuarter', name: 'Bán chuyên - Tứ kết', file: 'N1 - newbieQuarter.json' },
+    { id: 'newbieSemi', name: 'Bán chuyên - Bán kết', file: 'N2 - newbieSemi.json' },
+    { id: 'newbieFinals', name: 'Bán chuyên - Chung kết', file: 'N3 - newbieFinals.json' },
+    { id: 'proFemaleSemi', name: 'Chuyên nữ - Bán kết', file: 'PF1 - proFemaleSemi.json' },
+    { id: 'proFemaleFinals', name: 'Chuyên nữ - Chung kết', file: 'PF2 - proFemaleFinals.json' },
+    { id: 'proMaleSemi', name: 'Chuyên nam - Bán kết', file: 'PM1 - proMaleSemi.json' },
+    { id: 'proMaleFinals', name: 'Chuyên nam - Chung kết', file: 'PM2 - proMaleFinals.json' },
     { id: 'top32', name: 'Top 32 (Custom)', file: 'top32.json' },
 ];
 

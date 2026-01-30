@@ -8,14 +8,13 @@ export const dynamic = "force-dynamic";
 
 // Pool file mapping
 const POOL_FILES: Record<string, string> = {
-  newbieQual1: '/pools/N1 - newbieQual1.json',
-  newbieQual2: '/pools/N2 - newbieQual2.json',
-  newbieSemi: '/pools/N3 - newbieSemi.json',
-  newbieFinals: '/pools/N4 - newbieFinals.json',
-  proQual: '/pools/P1 - proTop3216.json',
-  proTop8: '/pools/P2 - proTop8.json',
-  proSemi: '/pools/P3 - proSemi.json',
-  proFinals: '/pools/P4 - proFinals.json',
+  newbieQuarter: '/pools/N1 - newbieQuarter.json',
+  newbieSemi: '/pools/N2 - newbieSemi.json',
+  newbieFinals: '/pools/N3 - newbieFinals.json',
+  proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
+  proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
+  proMaleSemi: '/pools/PM1 - proMaleSemi.json',
+  proMaleFinals: '/pools/PM2 - proMaleFinals.json',
   top32: '/pools/top32.json',
 };
 

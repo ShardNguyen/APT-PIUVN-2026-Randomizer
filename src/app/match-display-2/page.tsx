@@ -63,10 +63,10 @@ export default function MatchDisplay2() {
 
         if (diffName.includes('re:master') || diffName === 're:master') {
             diffName = 're';
-        } else if (diffName.includes('master')) {
-            diffName = 'master';
-        } else if (diffName.includes('expert')) {
-            diffName = 'expert';
+        } else if (diffName.includes('double')) {
+            diffName = 'double';
+        } else if (diffName.includes('single')) {
+            diffName = 'single';
         }
 
         return `/assets/${diffName}-${type}.png`;

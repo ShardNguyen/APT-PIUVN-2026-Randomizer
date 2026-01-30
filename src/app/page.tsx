@@ -44,7 +44,9 @@ export default function Home() {
         /* Final Results Phase */
         <div className="min-h-screen flex flex-col items-center justify-center p-4">
           <h2 className="text-4xl font-bold text-white mb-8 text-center drop-shadow-lg tracking-wide"
-            style={{ textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 4px 8px rgba(0,0,0,0.3)' }}>
+            style={{ 
+              textShadow: '0 0 20px rgba(168, 85, 247, 0.5), 0 4px 8px rgba(0,0,0,0.3)' 
+            }}>
             RANDOM RESULT
           </h2>
           <BanPickCarousel
@@ -140,8 +142,8 @@ function QuadRandomSlotDisplay({
     const type = isDx === 'True' ? 'dx' : 'std';
     let diffName = diff.toLowerCase();
     if (diffName.includes('re:master')) diffName = 're';
-    else if (diffName.includes('master')) diffName = 'master';
-    else if (diffName.includes('expert')) diffName = 'expert';
+    else if (diffName.includes('double')) diffName = 'double';
+    else if (diffName.includes('single')) diffName = 'single';
     return `/assets/${diffName}-${type}.png`;
   };
 
