@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/Appassionata.png",
+    "artist": "Cashew x D_AAN x Jehezukiel",
+    "title": "Appassionata",
+    "lv": "22",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "1",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/EON.png",
+    "artist": "HiTECH NINJA",
+    "title": "E.O.N",
+    "lv": "22",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/AliceInMisanthrope.png",
+    "artist": "LeaF",
+    "title": "Alice in Misanthrope",
+    "lv": "22",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/EtudeOP104.png",
+    "artist": "MAX",
+    "title": "Etude Op 10-4",
+    "lv": "22",
+    "diff": "SINGLE",
+    "isDx": "True"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "0",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/Pupa.png",
+    "artist": "Cashew x D_AAN x Jehezukiel",
+    "title": "PUPA",
+    "lv": "23",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "1",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/SpookyMacaron.png",
+    "artist": "Sobrem",
+    "title": "Spooky Macaron",
+    "lv": "23",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/MEGAHEARTZ.png",
+    "artist": "DJ Noriken",
+    "title": "MEGAHEARTZ",
+    "lv": "23",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/DeadEnd.png",
+    "artist": "Cosmograph",
+    "title": "Dead End",
+    "lv": "23",
+    "diff": "SINGLE",
+    "isDx": "True"
+  }
+]

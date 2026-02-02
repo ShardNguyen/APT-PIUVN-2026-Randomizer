@@ -1,11 +1,11 @@
 [
     {
         "id": "10",
-        "imgUrl": "https://piuimages.arroweclip.se/songs/HorangPungryuga.png",
-        "artist": "Sangnoksu feat. HANANA",
-        "title": "Horang Pungryuga",
-        "lv": "21",
-        "diff": "EXPERT",
+        "imgUrl": "https://cdn.tienphong.vn/images/e3a0382c4ed78d84b24b4fe84eef5de37c0f9cf9b03e0fdbf80f28f7ca898017c36211f3c9c6666287de337bda75ead6ff94ba9b9e125b7fa37f0fa08398f4c3/67-kid-meme-word-of-the-year.jpg",
+        "artist": "Whoever this kid is",
+        "title": "SIX SEVEN!!!",
+        "lv": "67",
+        "diff": "SINGLE",
         "isDx": "True"
     },
     {
@@ -14,7 +14,7 @@
         "artist": "星街すいせい（ホロライブ）",
         "title": "ビビデバ",
         "lv": "11+",
-        "diff": "MASTER",
+        "diff": "DOUBLE",
         "isDx": "True"
     },
     {
@@ -23,7 +23,7 @@
         "artist": "こっちのけんと",
         "title": "はいよろこんで",
         "lv": "11+",
-        "diff": "MASTER",
+        "diff": "DOUBLE",
         "isDx": "True"
     },
     {
@@ -32,7 +32,7 @@
         "artist": "歌：V.I.P／作詞・作曲：廉",
         "title": "月光",
         "lv": "11",
-        "diff": "EXPERT",
+        "diff": "SINGLE",
         "isDx": "True"
     },
     {
@@ -41,7 +41,16 @@
         "artist": "超てんちゃん",
         "title": "きゅびびびびずむ",
         "lv": "12",
-        "diff": "EXPERT",
+        "diff": "SINGLE",
+        "isDx": "True"
+    },
+    {
+        "id": "20",
+        "imgUrl": "https://cdn.tienphong.vn/images/e3a0382c4ed78d84b24b4fe84eef5de37c0f9cf9b03e0fdbf80f28f7ca898017c36211f3c9c6666287de337bda75ead6ff94ba9b9e125b7fa37f0fa08398f4c3/67-kid-meme-word-of-the-year.jpg",
+        "artist": "Whoever this kid is",
+        "title": "SIX SEVEN!!!",
+        "lv": "67",
+        "diff": "SINGLE",
         "isDx": "True"
     }
 ]

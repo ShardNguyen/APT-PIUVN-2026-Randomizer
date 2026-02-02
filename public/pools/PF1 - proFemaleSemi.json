@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/Euphorianic.png",
+    "artist": "SHK",
+    "title": "Euphorianic",
+    "lv": "19",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "1",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/MurdochvsOtada.png",
+    "artist": "ESPITZ vs WONDERTRAVELER Project",
+    "title": "Murdoch vs Otada",
+    "lv": "19",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/DarksideOfTheMind.png",
+    "artist": "DJ Myosuke",
+    "title": "Darkside Of The Mind",
+    "lv": "19",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/Dancing.png",
+    "artist": "Said",
+    "title": "Dancing",
+    "lv": "20",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "4",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/withergarden.png",
+    "artist": "uma feat. 橘花音",
+    "title": "wither garden",
+    "lv": "20",
+    "diff": "SINGLE",
+    "isDx": "True"
+  },
+  {
+    "id": "5",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/AliceInMisanthrope.png",
+    "artist": "LeaF",
+    "title": "Alice in Misanthrope",
+    "lv": "20",
+    "diff": "SINGLE",
+    "isDx": "True"
+  }
+]

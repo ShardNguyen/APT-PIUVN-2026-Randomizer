@@ -147,7 +147,7 @@ app.prepare().then(() => {
 
     socket.on('RETURN_TO_SELECTION', () => {
       gameState.phase = 'banpick';
-      gameState.bannedSongs = [...gameState.bannedSongs, ...gameState.pickedSongs];
+      // gameState.bannedSongs = [...gameState.bannedSongs, ...gameState.pickedSongs];
       gameState.pickedSongs = [];
       gameState.matchSongs = [];
       gameState.currentMatchIndex = 0;
