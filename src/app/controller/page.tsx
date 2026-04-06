@@ -941,7 +941,7 @@ export default function ControllerPage() {
                     </div>
                 )}
 
-                <div className="grid grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                     {/* Column 0 - Game Control */}
                     <div className="space-y-4">
                         {/* Game Control Panel */}
@@ -1370,7 +1370,7 @@ export default function ControllerPage() {
                         </button>
                     </div>
 
-                    {/* Right Column - Fixed Songs */}
+                    {/* Right Column - Fixed Songs
                     <div className="bg-gray-800 rounded-xl p-4 h-fit">
                         <h2 className="text-lg font-semibold text-white mb-3">Fixed Songs ({fixedSongs.length})</h2>
                         <input
@@ -1401,14 +1401,14 @@ export default function ControllerPage() {
                                 );
                             })}
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Column 3 - Stream Text */}
-                    <div className="bg-gray-800 rounded-xl p-3 h-fit">
-                        <h2 className="text-sm font-semibold text-white mb-2">Stream Text</h2>
+                    {/* <div className="bg-gray-800 rounded-xl p-3 h-fit">
+                        <h2 className="text-sm font-semibold text-white mb-2">Stream Text</h2> */}
 
                         {/* JSON File Uploads */}
-                        <div className="grid grid-cols-2 gap-2 mb-3">
+                        {/* <div className="grid grid-cols-2 gap-2 mb-3">
                             <div>
                                 <label className="block text-xs text-gray-400 mb-1">Players JSON</label>
                                 <input
@@ -1445,10 +1445,10 @@ export default function ControllerPage() {
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Round Name */}
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                             <div className="flex items-center justify-between mb-1">
                                 <p className="text-gray-300 text-xs">Round</p>
                                 <label className="flex items-center gap-1 text-xs text-gray-400">
@@ -1497,10 +1497,10 @@ export default function ControllerPage() {
                                     className="w-full px-2 py-1 bg-gray-700 text-white rounded outline-none focus:ring-2 focus:ring-purple-500 text-xs"
                                 />
                             )}
-                        </div>
+                        </div> */}
 
                         {/* Player Inputs */}
-                        {[1, 2, 3, 4].map((num) => {
+                        {/* {[1, 2, 3, 4].map((num) => {
                             const playerKey = `player${num}` as 'player1' | 'player2' | 'player3' | 'player4';
                             const tagKey = `player${num}Tag` as 'player1Tag' | 'player2Tag' | 'player3Tag' | 'player4Tag';
                             const jsonKey = `player${num}UseJson` as 'player1UseJson' | 'player2UseJson' | 'player3UseJson' | 'player4UseJson';
@@ -1571,10 +1571,10 @@ export default function ControllerPage() {
                                     )}
                                 </div>
                             );
-                        })}
+                        })} */}
 
                         {/* Push & Clear Buttons */}
-                        <div className="flex gap-2 mt-2">
+                        {/* <div className="flex gap-2 mt-2">
                             <button
                                 onClick={pushStreamText}
                                 className="flex-1 py-1 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded text-xs transition-colors"
@@ -1594,7 +1594,7 @@ export default function ControllerPage() {
                                 Clear
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Column 4 - Ban/Pick Log */}
@@ -1638,6 +1638,7 @@ export default function ControllerPage() {
             {/* Info */}
             <div className="text-center text-gray-400 text-sm mt-6">
                 <p>Made by PXT with luv &lt;3 (and chatgbt). Ofc Shard and Necros1s also</p>
+                <p>Modified by Shard for APT PIU 2026</p>
             </div>
         </div>
 
