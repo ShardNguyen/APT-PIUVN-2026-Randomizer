@@ -784,11 +784,11 @@ export default function ControllerPage() {
         const template = [
             {
                 "id": "0",
-                "imgUrl": "https://example.com/cover.png",
-                "artist": "Artist Name",
-                "title": "Song Title",
-                "lv": "13",
-                "diff": "MASTER",
+                "imgUrl": "https://piuimages.arroweclip.se/songs/HorangPungryuga.png",
+                "artist": "Sangnoksu feat. HANANA",
+                "title": "Horang Pungryuga",
+                "lv": "24",
+                "diff": "DOUBLE",
                 "isDx": "True"
             }
         ];
@@ -1242,11 +1242,11 @@ export default function ControllerPage() {
                         </div>
 
                         {/* Locked Tracks */}
-                        <div className="bg-gray-800 rounded-xl p-4">
+                        {/* <div className="bg-gray-800 rounded-xl p-4">
                             <h2 className="text-lg font-semibold text-white mb-3">Locked Tracks</h2>
-                            <div className="space-y-4">
+                            <div className="space-y-4"> */}
                                 {/* Track 3 */}
-                                <div className="track3-container relative">
+                                {/* <div className="track3-container relative">
                                     <p className="text-gray-300 text-sm mb-2">Track 3</p>
                                     <input
                                         type="text"
@@ -1300,10 +1300,10 @@ export default function ControllerPage() {
                                             Hidden track
                                         </label>
                                     )}
-                                </div>
+                                </div> */}
 
                                 {/* Track 4 */}
-                                <div className="track4-container relative">
+                                {/* <div className="track4-container relative">
                                     <p className="text-gray-300 text-sm mb-2">Track 4</p>
                                     <input
                                         type="text"
@@ -1359,7 +1359,7 @@ export default function ControllerPage() {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Reset Button */}
                         <button

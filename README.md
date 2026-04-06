@@ -49,13 +49,12 @@ npm run dev
 
 ## Usage
 
-1. Open the [http://localhost:3000/controller](Controller page) to manage the tournament
+1. Open the [http://localhost:3000/controller](Controller page) in a browser to manage the randomizer
 2. Select the appropriate song pool for the current round
-3. Configure random count, pick count, and ban count
-4. Press **Start** to randomize songs (overlay will cover results)
-5. Press **Show song** to reveal results with diagonal wipe animation
-6. Use Ban/Pick controls to manage song selection
-7. Navigate to Match Display for the final song lineup
+3. Configure the pick count
+4. Press **Start Process twice** to load up the songs in the pool
+5. Press **Start Random** to play the random animation
+6. Press the highlighted song in the controller to pick the song
 
 ## Technology Stack
 
