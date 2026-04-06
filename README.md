@@ -1,6 +1,6 @@
 # Pump It Up Asia Pacific Tournament - Tournament Randomizer Controller
 
-A real-time randomizer controller for **Pump It Up Asia Pacific Tournament**, based on [https://github.com/hidr0c/VHMaimai-Championship-Controller](**Soralia Studio**'s project for Van Hanh Maimai Championship). This system provides a comprehensive solution for randomizing songs and simulating PIU APT's song picking process.
+A real-time randomizer controller for **Pump It Up Asia Pacific Tournament**, based on [**Soralia Studio**'s project for Van Hanh Maimai Championship](https://github.com/hidr0c/VHMaimai-Championship-Controller). This system provides a comprehensive solution for randomizing songs and simulating PIU APT's song picking process.
 ## Overview
 
 This application is modified to consist two main pages designed for tournament broadcasting:
@@ -49,7 +49,7 @@ npm run dev
 
 ## Usage
 
-1. Open the [http://localhost:3000/controller](Controller page) in a browser to manage the randomizer
+1. Open the [http://localhost:3000/controller](http://localhost:3000/controller) in a browser to manage the randomizer
 2. Select the appropriate song pool for the current round
 3. Configure the pick count
 4. Press **Start Process twice** to load up the songs in the pool
