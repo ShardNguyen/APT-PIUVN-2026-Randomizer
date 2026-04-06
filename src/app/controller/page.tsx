@@ -656,10 +656,8 @@ export default function ControllerPage() {
 
     const getDiffColor = (diff: string) => {
         switch (diff) {
-            case 'EXPERT': return 'text-red-400';
-            case 'MASTER': return 'text-purple-400';
-            case 'RE:MASTER':
-            case 'Re:MASTER': return 'text-pink-400';
+            case 'SINGLE': return 'text-red-400';
+            case 'DOUBLE': return 'text-green-400';
             default: return 'text-purple-300';
         }
     };
@@ -1091,9 +1089,9 @@ export default function ControllerPage() {
                                                     />
                                                     <div className="flex-1 min-w-0">
                                                         <p className="text-white text-xs font-medium truncate">{song.title}</p>
-                                                        <p className={`text-xs ${song.diff === 'MASTER' ? 'text-purple-400' :
-                                                            song.diff === 'EXPERT' ? 'text-red-400' :
-                                                                'text-pink-400'
+                                                        <p className={`text-xs ${song.diff === 'DOUBLE' ? 'text-green-400' :
+                                                            song.diff === 'SINGLE' ? 'text-red-400' :
+                                                                'text-purple-400'
                                                             }`}>
                                                             {song.diff} {song.lv}
                                                         </p>
@@ -1173,7 +1171,7 @@ export default function ControllerPage() {
                             <h2 className="text-lg font-semibold text-white mb-3">Game Settings</h2>
                             <div className="grid grid-cols-3 gap-4">
                                 {/* Random Count */}
-                                <div className="text-center">
+                                {/* <div className="text-center">
                                     <p className="text-gray-300 text-sm mb-2">Random</p>
                                     <div className="flex items-center justify-center gap-2">
                                         <button
@@ -1192,7 +1190,7 @@ export default function ControllerPage() {
                                             +
                                         </button>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Pick Count */}
                                 <div className="text-center">
@@ -1238,9 +1236,9 @@ export default function ControllerPage() {
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-gray-400 text-sm mt-4 text-center">
+                            {/* <p className="text-gray-400 text-sm mt-4 text-center">
                                 Total: {totalSongs} (Random: {randomCount} + Fixed: {fixedCount})
-                            </p>
+                            </p> */}
                         </div>
 
                         {/* Locked Tracks */}
