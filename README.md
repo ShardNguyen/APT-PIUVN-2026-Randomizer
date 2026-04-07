@@ -47,8 +47,9 @@ npm run dev
 | Controller | `/controller` | Main control panel |
 | Random Display | `/` | Song randomization overlay |
 
-## Usage
+## Usage for tournament
 
+0. Run installation
 1. Open the [http://localhost:3000/controller](http://localhost:3000/controller) in a browser to manage the randomizer
 2. Select the appropriate song pool for the current round
 3. Configure the pick count
