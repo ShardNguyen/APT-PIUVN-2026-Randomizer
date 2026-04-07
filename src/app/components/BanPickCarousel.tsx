@@ -219,18 +219,22 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 borderWidth: '5px',
                                 borderColor: isSelected ? '#EFFD5FFF' : '#00000000',
                                 flexShrink: 0,
-                                transform: showFinalOnly
-                                    ? 'scale(1)'
-                                    : picked
-                                        ? 'scale(1.15) translateY(-24px)'
-                                        : banned
-                                            ? 'scale(0.85) translateY(15px) rotateZ(-2deg)'
-                                            : notChosen
-                                                ? 'scale(0.9) translateY(10px)'
-                                                : 'scale(1)',
+                                transform: showFinalOnly && pickedSongs.length === 1
+                                    ? 'scale(1.75)'
+                                    : showFinalOnly 
+                                        ? 'scale(1.5)'
+                                        : picked
+                                            ? 'scale(1.15) translateY(-24px)'
+                                            : banned
+                                                ? 'scale(0.85) translateY(15px) rotateZ(-2deg)'
+                                                : notChosen
+                                                    ? 'scale(0.9) translateY(10px)'
+                                                    : 'scale(1)',
                                 opacity: banned ? 0.7 : 1,
                                 zIndex: picked ? 10 : banned || notChosen ? 1 : 5,
-                                marginTop: showFinalOnly ? '40px' : '0' // Space for track label
+                                marginTop: showFinalOnly ? '40px' : '0', // Space for track label
+                                marginLeft: showFinalOnly ? '40px' : '0', 
+                                marginRight: showFinalOnly ? '40px' : '0'
                             }}
                         >
 
@@ -404,7 +408,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                             {/* Selection Overlay - REMOVED for cleaner look */}
 
                             {/* Track number label for final results */}
-                            {showFinalOnly && (
+                            {/* {showFinalOnly && (
                                 <div
                                     className="absolute -top-10 left-1/2 transform -translate-x-1/2 z-50"
                                     style={{
@@ -417,7 +421,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 >
                                     RESULT
                                 </div>
-                            )}
+                            )} */}
 
                             {/* Banned Overlay */}
                             {banned && !showFinalOnly && (
