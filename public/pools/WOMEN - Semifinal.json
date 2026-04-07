@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/MURDOCH.png",
+    "artist": "WONDERTRAVELER Project",
+    "title": "MURDOCH",
+    "lv": "22",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  },
+  {
+    "id": "1",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/CrimsonHood.png",
+    "artist": "Springhead",
+    "title": "Crimson Hood",
+    "lv": "22",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  },
+  {
+    "id": "2",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/Mahika.png",
+    "artist": "The Musical Ghost",
+    "title": "Mahika",
+    "lv": "22",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  },
+  {
+    "id": "3",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/LittleMunchkin.png",
+    "artist": "Castellia",
+    "title": "Little Munchkin",
+    "lv": "23",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  },
+  {
+    "id": "4",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/StardreamEurobeatRemix.png",
+    "artist": "MAX x Cashew x Dave Rodgers",
+    "title": "Stardream -Eurobeat Remix-",
+    "lv": "23",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  },
+  {
+    "id": "5",
+    "imgUrl": "https://piuimages.arroweclip.se/songs/BreakThroughMyself.png",
+    "artist": "DJ Myosuke & Laur",
+    "title": "Break Through Myself feat. Risa Yuzuki",
+    "lv": "23",
+    "diff": "DOUBLE",
+    "isDx": "True"
+  }
+]

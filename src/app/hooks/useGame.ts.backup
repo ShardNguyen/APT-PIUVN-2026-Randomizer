@@ -147,7 +147,7 @@ export function useGameController() {
   const POOL_FILES: Record<string, string> = {
     newbieQual1: "/pools/N1 - newbieQual1.json",
     newbieQual2: "/pools/N2 - newbieQual2.json",
-    newbieSemi: "/pools/N3 - newbieSemi.json",
+    menPre: "/pools/N3 - menPre.json",
     newbieFinals: "/pools/N4 - newbieFinals.json",
     proQual: "/pools/P1 - proTop3216.json",
     proTop8: "/pools/P2 - proTop8.json",

@@ -93,7 +93,7 @@ export interface GameState {
 }
 
 export const DEFAULT_GAME_STATE: GameState = {
-  selectedPool: 'newbieSemi',
+  selectedPool: 'menPre',
   randomCount: 4,
   pickCount: 2,
   banCount: 2,

@@ -16,7 +16,7 @@ type QuadRandomSlotProps = {
 
 const QuadRandomSlot: React.FC<QuadRandomSlotProps> = ({
     pool,
-    poolId = 'newbieSemi',
+    poolId = 'menPre',
     onRandomComplete,
     disabled = false,
     fixedSongs = [],

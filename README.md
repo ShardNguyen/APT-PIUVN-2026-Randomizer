@@ -6,7 +6,7 @@ A real-time randomizer controller for **Pump It Up Asia Pacific Tournament**, ba
 This application is modified to consist two main pages designed for tournament broadcasting:
 
 - **Controller Page** (`/controller`) - Main control panel for tournament operators
-- **Random Display** (`/`) - Song randomization display with animated reveal
+- **Random Display** (`/`) - Song randomization display with animated reveal.
 
 ## Features
 
@@ -54,7 +54,9 @@ npm run dev
 3. Configure the pick count
 4. Press **Start Process twice** to load up the songs in the pool
 5. Press **Start Random** to play the random animation
-6. Press the highlighted song in the controller to pick the song
+6. After the randomization is done, press the highlighted song in the controller to pick the song
+
+To display the randomizer page on OBS, simply add a Browser Source and add this link [http://localhost:3000/](http://localhost:3000/) as URL
 
 ## Technology Stack
 

@@ -5,14 +5,14 @@ import { Song } from '../interface';
 
 // Available pools
 const POOL_OPTIONS = [
-    { id: 'newbieQuarter', name: 'Bán chuyên - Tứ kết', file: 'N1 - newbieQuarter.json' },
-    { id: 'newbieSemi', name: 'Bán chuyên - Bán kết', file: 'N2 - newbieSemi.json' },
-    { id: 'newbieFinals', name: 'Bán chuyên - Chung kết', file: 'N3 - newbieFinals.json' },
-    { id: 'proFemaleSemi', name: 'Chuyên nữ - Bán kết', file: 'PF1 - proFemaleSemi.json' },
-    { id: 'proFemaleFinals', name: 'Chuyên nữ - Chung kết', file: 'PF2 - proFemaleFinals.json' },
-    { id: 'proMaleSemi', name: 'Chuyên nam - Bán kết', file: 'PM1 - proMaleSemi.json' },
-    { id: 'proMaleFinals', name: 'Chuyên nam - Chung kết', file: 'PM2 - proMaleFinals.json' },
-    { id: 'top32', name: 'Top 32 (Custom)', file: 'top32.json' },
+    { id: 'menPre', name: 'MEN - Preliminary', file: 'MEN - Preliminary.json' },
+    { id: 'menQuarter', name: 'MEN - Quarter Final', file: 'MEN - Quarter.json' },
+    { id: 'menSemi', name: 'MEN - Semifinal', file: 'MEN - Semifinal.json' },
+    { id: 'menFinal', name: 'MEN - Final', file: 'MEN - Final.json' },
+    { id: 'womenPre', name: 'WOMEN - Preliminary', file: 'WOMEN - Preliminary.json' },
+    { id: 'womenQuarter', name: 'WOMEN - Quarter Final', file: 'WOMEN - Quarter.json' },
+    { id: 'womenSemi', name: 'MEN - Semifinal', file: 'WOMEN - Semifinal.json' },
+    { id: 'womenFinal', name: 'MEN - Final', file: 'WOMEN - Final.json' },
 ];
 
 type UnifiedSettingsPanelProps = {

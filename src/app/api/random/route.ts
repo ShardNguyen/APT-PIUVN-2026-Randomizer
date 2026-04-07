@@ -8,14 +8,14 @@ export const dynamic = "force-dynamic";
 
 // Pool file mapping
 const POOL_FILES: Record<string, string> = {
-  newbieQuarter: '/pools/N1 - newbieQuarter.json',
-  newbieSemi: '/pools/N2 - newbieSemi.json',
-  newbieFinals: '/pools/N3 - newbieFinals.json',
-  proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
-  proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
-  proMaleSemi: '/pools/PM1 - proMaleSemi.json',
-  proMaleFinals: '/pools/PM2 - proMaleFinals.json',
-  top32: '/pools/top32.json',
+  menPre: '/pools/MEN - Preliminary.json',
+  menQuarter: '/pools/MEN - Quarter.json',
+  menSemi: '/pools/MEN - Semifinal.json',
+  menFinal: '/pools/MEN - Final.json',
+  womenPre: '/pools/WOMEN - Preliminary.json',
+  womenQuarter: '/pools/WOMEN - Quarter.json',
+  womenSemi: '/pools/WOMEN - Semifinal.json',
+  womenFinal: '/pools/WOMEN - Final.json',
 };
 
 interface Song {
@@ -68,7 +68,7 @@ const shuffleArray = <T>(array: T[]): T[] => {
 // GET - Get initial display songs (pre-randomized)
 export async function GET(request: NextRequest) {
   try {
-    const poolId = request.nextUrl.searchParams.get("poolId") || "newbieSemi";
+    const poolId = request.nextUrl.searchParams.get("poolId") || "menPre";
     const count = parseInt(request.nextUrl.searchParams.get("count") || "4");
     const excludeIds = request.nextUrl.searchParams.get("excludeIds")?.split(",").filter(Boolean) || [];
 
@@ -103,8 +103,8 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const {
-      poolId = "newbieSemi",
-      randomCount = 4,
+      poolId = "menPre",
+      randomCount = 6,
       excludeIds = [],
       animationPoolSize = 60 // Default 60 songs for animation
     } = body;

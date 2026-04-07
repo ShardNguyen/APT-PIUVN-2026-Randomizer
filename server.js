@@ -14,10 +14,10 @@ const handle = app.getRequestHandler();
 
 // Game state in memory (synced across all clients)
 let gameState = {
-  selectedPool: 'newbieSemi',
-  randomCount: 4,
-  pickCount: 2,
-  banCount: 2,
+  selectedPool: 'menPre',
+  randomCount: 6,
+  pickCount: 1,
+  banCount: 0,
   fixedSongs: [],
   lockedTracks: {},
   hiddenTracks: { track3Hidden: false, track4Hidden: false },

@@ -235,14 +235,14 @@ export function useGameController() {
 
   // Pool file mapping
   const POOL_FILES: Record<string, string> = {
-    newbieQuarter: '/pools/N1 - newbieQuarter.json',
-    newbieSemi: '/pools/N2 - newbieSemi.json',
-    newbieFinals: '/pools/N3 - newbieFinals.json',
-    proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
-    proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
-    proMaleSemi: '/pools/PM1 - proMaleSemi.json',
-    proMaleFinals: '/pools/PM2 - proMaleFinals.json',
-    top32: '/pools/top32.json',
+    menPre: '/pools/MEN - Preliminary.json',
+    menQuarter: '/pools/MEN - Quarter.json',
+    menSemi: '/pools/MEN - Semifinal.json',
+    menFinal: '/pools/MEN - Final.json',
+    womenPre: '/pools/WOMEN - Preliminary.json',
+    womenQuarter: '/pools/WOMEN - Quarter.json',
+    womenSemi: '/pools/WOMEN - Semifinal.json',
+    womenFinal: '/pools/WOMEN - Final.json',
   };
 
   // Socket connection setup

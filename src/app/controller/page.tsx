@@ -6,26 +6,26 @@ import { emitGameEvent, getSocket, onGameEvent } from '../lib/socketClient';
 
 // Pool file mapping
 const POOL_FILES: Record<string, string> = {
-    newbieQuarter: '/pools/N1 - newbieQuarter.json',
-    newbieSemi: '/pools/N2 - newbieSemi.json',
-    newbieFinals: '/pools/N3 - newbieFinals.json',
-    proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
-    proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
-    proMaleSemi: '/pools/PM1 - proMaleSemi.json',
-    proMaleFinals: '/pools/PM2 - proMaleFinals.json',
-    top32: '/pools/top32.json',
+    menPre: '/pools/MEN - Preliminary.json',
+    menQuarter: '/pools/MEN - Quarter.json',
+    menSemi: '/pools/MEN - Semifinal.json',
+    menFinal: '/pools/MEN - Final.json',
+    womenPre: '/pools/WOMEN - Preliminary.json',
+    womenQuarter: '/pools/WOMEN - Quarter.json',
+    womenSemi: '/pools/WOMEN - Semifinal.json',
+    womenFinal: '/pools/WOMEN - Final.json',
 };
 
 // Available pools
 const POOL_OPTIONS = [
-    { id: 'newbieQuarter', name: 'Bán chuyên - Tứ kết', file: 'N1 - newbieQuarter.json' },
-    { id: 'newbieSemi', name: 'Bán chuyên - Bán kết', file: 'N2 - newbieSemi.json' },
-    { id: 'newbieFinals', name: 'Bán chuyên - Chung kết', file: 'N3 - newbieFinals.json' },
-    { id: 'proFemaleSemi', name: 'Chuyên nữ - Bán kết', file: 'PF1 - proFemaleSemi.json' },
-    { id: 'proFemaleFinals', name: 'Chuyên nữ - Chung kết', file: 'PF2 - proFemaleFinals.json' },
-    { id: 'proMaleSemi', name: 'Chuyên nam - Bán kết', file: 'PM1 - proMaleSemi.json' },
-    { id: 'proMaleFinals', name: 'Chuyên nam - Chung kết', file: 'PM2 - proMaleFinals.json' },
-    { id: 'top32', name: 'Top 32 (Custom)', file: 'top32.json' },
+    { id: 'menPre', name: 'MEN - Preliminary', file: 'MEN - Preliminary.json' },
+    { id: 'menQuarter', name: 'MEN - Quarter Final', file: 'MEN - Quarter.json' },
+    { id: 'menSemi', name: 'MEN - Semifinal', file: 'MEN - Semifinal.json' },
+    { id: 'menFinal', name: 'MEN - Final', file: 'MEN - Final.json' },
+    { id: 'womenPre', name: 'WOMEN - Preliminary', file: 'WOMEN - Preliminary.json' },
+    { id: 'womenQuarter', name: 'WOMEN - Quarter Final', file: 'WOMEN - Quarter.json' },
+    { id: 'womenSemi', name: 'WOMEN - Semifinal', file: 'WOMEN - Semifinal.json' },
+    { id: 'womenFinal', name: 'WOMEN - Final', file: 'WOMEN - Final.json' },
 ];
 
 // Helper to ensure songs have id field
@@ -39,7 +39,7 @@ const ensureIds = (songs: any[]): Song[] => {
 
 export default function ControllerPage() {
     // Settings state
-    const [selectedPool, setSelectedPool] = useState('newbieSemi');
+    const [selectedPool, setSelectedPool] = useState('menPre');
     const [songData, setSongData] = useState<Song[]>([]);
     const [isLoadingPool, setIsLoadingPool] = useState(true);
     const abortControllerRef = useRef<AbortController | null>(null);
@@ -525,7 +525,7 @@ export default function ControllerPage() {
 
             if (!poolFile) {
                 console.error('Unknown pool:', selectedPool);
-                setSelectedPool('newbieSemi');
+                setSelectedPool('menPre');
                 return;
             }
 

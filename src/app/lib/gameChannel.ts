@@ -103,7 +103,7 @@ export function subscribeToMessages(callback: (message: ChannelMessage) => void)
 
 // Default initial state
 export const DEFAULT_GAME_STATE: GameState = {
-  selectedPool: 'newbieSemi',
+  selectedPool: 'menPre',
   randomCount: 4,
   pickCount: 2,
   banCount: 0,
