@@ -220,7 +220,7 @@ const BanPickCarousel: React.FC<BanPickCarouselProps> = ({
                                 borderColor: isSelected ? '#EFFD5FFF' : '#00000000',
                                 flexShrink: 0,
                                 transform: showFinalOnly && pickedSongs.length === 1
-                                    ? 'scale(1.75)'
+                                    ? 'scale(2)'
                                     : showFinalOnly 
                                         ? 'scale(1.5)'
                                         : picked
