@@ -72,6 +72,7 @@ To display the randomizer page on OBS, simply add a Browser Source and add this 
 
 - Van Hanh Maimai Championship Facebook Page: [Facebook Page](https://www.facebook.com/profile.php?id=61579710413403)
 - Van Hanh Maimai Championship's Stream: [Stream VOD](https://www.youtube.com/live/Qd18K1g0GOg?si=M-Ci3IHr17kfWfjk)
+- Asia Pacific Tournament Pump It Up in Indonesia: [Stream VOD](https://www.youtube.com/watch?v=8QlGG_s7XeI)
 
 ### Resources
 
