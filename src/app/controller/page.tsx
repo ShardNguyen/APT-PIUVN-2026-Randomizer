@@ -6,26 +6,26 @@ import { emitGameEvent, getSocket, onGameEvent } from '../lib/socketClient';
 
 // Pool file mapping
 const POOL_FILES: Record<string, string> = {
-    newbieQuarter: '/pools/N1 - newbieQuarter.json',
-    newbieSemi: '/pools/N2 - newbieSemi.json',
-    newbieFinals: '/pools/N3 - newbieFinals.json',
-    proFemaleSemi: '/pools/PF1 - proFemaleSemi.json',
-    proFemaleFinals: '/pools/PF2 - proFemaleFinals.json',
-    proMaleSemi: '/pools/PM1 - proMaleSemi.json',
-    proMaleFinals: '/pools/PM2 - proMaleFinals.json',
-    top32: '/pools/top32.json',
+    menPre: '/pools/MEN - Preliminary.json',
+    menQuarter: '/pools/MEN - Quarter.json',
+    menSemi: '/pools/MEN - Semifinal.json',
+    menFinal: '/pools/MEN - Final.json',
+    womenPre: '/pools/WOMEN - Preliminary.json',
+    womenQuarter: '/pools/WOMEN - Quarter.json',
+    womenSemi: '/pools/WOMEN - Semifinal.json',
+    womenFinal: '/pools/WOMEN - Final.json',
 };
 
 // Available pools
 const POOL_OPTIONS = [
-    { id: 'newbieQuarter', name: 'Bán chuyên - Tứ kết', file: 'N1 - newbieQuarter.json' },
-    { id: 'newbieSemi', name: 'Bán chuyên - Bán kết', file: 'N2 - newbieSemi.json' },
-    { id: 'newbieFinals', name: 'Bán chuyên - Chung kết', file: 'N3 - newbieFinals.json' },
-    { id: 'proFemaleSemi', name: 'Chuyên nữ - Bán kết', file: 'PF1 - proFemaleSemi.json' },
-    { id: 'proFemaleFinals', name: 'Chuyên nữ - Chung kết', file: 'PF2 - proFemaleFinals.json' },
-    { id: 'proMaleSemi', name: 'Chuyên nam - Bán kết', file: 'PM1 - proMaleSemi.json' },
-    { id: 'proMaleFinals', name: 'Chuyên nam - Chung kết', file: 'PM2 - proMaleFinals.json' },
-    { id: 'top32', name: 'Top 32 (Custom)', file: 'top32.json' },
+    { id: 'menPre', name: 'MEN - Preliminary', file: 'MEN - Preliminary.json' },
+    { id: 'menQuarter', name: 'MEN - Quarter Final', file: 'MEN - Quarter.json' },
+    { id: 'menSemi', name: 'MEN - Semifinal', file: 'MEN - Semifinal.json' },
+    { id: 'menFinal', name: 'MEN - Final', file: 'MEN - Final.json' },
+    { id: 'womenPre', name: 'WOMEN - Preliminary', file: 'WOMEN - Preliminary.json' },
+    { id: 'womenQuarter', name: 'WOMEN - Quarter Final', file: 'WOMEN - Quarter.json' },
+    { id: 'womenSemi', name: 'WOMEN - Semifinal', file: 'WOMEN - Semifinal.json' },
+    { id: 'womenFinal', name: 'WOMEN - Final', file: 'WOMEN - Final.json' },
 ];
 
 // Helper to ensure songs have id field
@@ -39,7 +39,7 @@ const ensureIds = (songs: any[]): Song[] => {
 
 export default function ControllerPage() {
     // Settings state
-    const [selectedPool, setSelectedPool] = useState('newbieSemi');
+    const [selectedPool, setSelectedPool] = useState('menPre');
     const [songData, setSongData] = useState<Song[]>([]);
     const [isLoadingPool, setIsLoadingPool] = useState(true);
     const abortControllerRef = useRef<AbortController | null>(null);
@@ -330,7 +330,7 @@ export default function ControllerPage() {
 
     // Return to song pool selection
     const handleReturnToSongSelection = () => {
-        setBannedSongs([...bannedSongs, ...pickedSongs]);
+        // setBannedSongs([...bannedSongs, ...pickedSongs]);
         setPickedSongs([]);
         setShowBanPick(true);
         setShowFinalResults(false);
@@ -338,7 +338,7 @@ export default function ControllerPage() {
         setCurrentMatchIndex(0);
         setIsMatchPhase(false);
 
-        emitGameEvent('RETURN_TO_SELECTION', { pickedSongs });
+        emitGameEvent('RETURN_TO_SELECTION');
     }
 
     // Reset game
@@ -525,7 +525,7 @@ export default function ControllerPage() {
 
             if (!poolFile) {
                 console.error('Unknown pool:', selectedPool);
-                setSelectedPool('newbieSemi');
+                setSelectedPool('menPre');
                 return;
             }
 
@@ -656,10 +656,8 @@ export default function ControllerPage() {
 
     const getDiffColor = (diff: string) => {
         switch (diff) {
-            case 'EXPERT': return 'text-red-400';
-            case 'MASTER': return 'text-purple-400';
-            case 'RE:MASTER':
-            case 'Re:MASTER': return 'text-pink-400';
+            case 'SINGLE': return 'text-red-400';
+            case 'DOUBLE': return 'text-green-400';
             default: return 'text-purple-300';
         }
     };
@@ -786,11 +784,11 @@ export default function ControllerPage() {
         const template = [
             {
                 "id": "0",
-                "imgUrl": "https://example.com/cover.png",
-                "artist": "Artist Name",
-                "title": "Song Title",
-                "lv": "13",
-                "diff": "MASTER",
+                "imgUrl": "https://piuimages.arroweclip.se/songs/HorangPungryuga.png",
+                "artist": "Sangnoksu feat. HANANA",
+                "title": "Horang Pungryuga",
+                "lv": "24",
+                "diff": "DOUBLE",
                 "isDx": "True"
             }
         ];
@@ -943,7 +941,7 @@ export default function ControllerPage() {
                     </div>
                 )}
 
-                <div className="grid grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                     {/* Column 0 - Game Control */}
                     <div className="space-y-4">
                         {/* Game Control Panel */}
@@ -1091,9 +1089,9 @@ export default function ControllerPage() {
                                                     />
                                                     <div className="flex-1 min-w-0">
                                                         <p className="text-white text-xs font-medium truncate">{song.title}</p>
-                                                        <p className={`text-xs ${song.diff === 'MASTER' ? 'text-purple-400' :
-                                                            song.diff === 'EXPERT' ? 'text-red-400' :
-                                                                'text-pink-400'
+                                                        <p className={`text-xs ${song.diff === 'DOUBLE' ? 'text-green-400' :
+                                                            song.diff === 'SINGLE' ? 'text-red-400' :
+                                                                'text-purple-400'
                                                             }`}>
                                                             {song.diff} {song.lv}
                                                         </p>
@@ -1173,7 +1171,7 @@ export default function ControllerPage() {
                             <h2 className="text-lg font-semibold text-white mb-3">Game Settings</h2>
                             <div className="grid grid-cols-3 gap-4">
                                 {/* Random Count */}
-                                <div className="text-center">
+                                {/* <div className="text-center">
                                     <p className="text-gray-300 text-sm mb-2">Random</p>
                                     <div className="flex items-center justify-center gap-2">
                                         <button
@@ -1192,7 +1190,7 @@ export default function ControllerPage() {
                                             +
                                         </button>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Pick Count */}
                                 <div className="text-center">
@@ -1238,17 +1236,17 @@ export default function ControllerPage() {
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-gray-400 text-sm mt-4 text-center">
+                            {/* <p className="text-gray-400 text-sm mt-4 text-center">
                                 Total: {totalSongs} (Random: {randomCount} + Fixed: {fixedCount})
-                            </p>
+                            </p> */}
                         </div>
 
                         {/* Locked Tracks */}
-                        <div className="bg-gray-800 rounded-xl p-4">
+                        {/* <div className="bg-gray-800 rounded-xl p-4">
                             <h2 className="text-lg font-semibold text-white mb-3">Locked Tracks</h2>
-                            <div className="space-y-4">
+                            <div className="space-y-4"> */}
                                 {/* Track 3 */}
-                                <div className="track3-container relative">
+                                {/* <div className="track3-container relative">
                                     <p className="text-gray-300 text-sm mb-2">Track 3</p>
                                     <input
                                         type="text"
@@ -1302,10 +1300,10 @@ export default function ControllerPage() {
                                             Hidden track
                                         </label>
                                     )}
-                                </div>
+                                </div> */}
 
                                 {/* Track 4 */}
-                                <div className="track4-container relative">
+                                {/* <div className="track4-container relative">
                                     <p className="text-gray-300 text-sm mb-2">Track 4</p>
                                     <input
                                         type="text"
@@ -1361,7 +1359,7 @@ export default function ControllerPage() {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Reset Button */}
                         <button
@@ -1372,7 +1370,7 @@ export default function ControllerPage() {
                         </button>
                     </div>
 
-                    {/* Right Column - Fixed Songs */}
+                    {/* Right Column - Fixed Songs
                     <div className="bg-gray-800 rounded-xl p-4 h-fit">
                         <h2 className="text-lg font-semibold text-white mb-3">Fixed Songs ({fixedSongs.length})</h2>
                         <input
@@ -1403,14 +1401,14 @@ export default function ControllerPage() {
                                 );
                             })}
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Column 3 - Stream Text */}
-                    <div className="bg-gray-800 rounded-xl p-3 h-fit">
-                        <h2 className="text-sm font-semibold text-white mb-2">Stream Text</h2>
+                    {/* <div className="bg-gray-800 rounded-xl p-3 h-fit">
+                        <h2 className="text-sm font-semibold text-white mb-2">Stream Text</h2> */}
 
                         {/* JSON File Uploads */}
-                        <div className="grid grid-cols-2 gap-2 mb-3">
+                        {/* <div className="grid grid-cols-2 gap-2 mb-3">
                             <div>
                                 <label className="block text-xs text-gray-400 mb-1">Players JSON</label>
                                 <input
@@ -1447,10 +1445,10 @@ export default function ControllerPage() {
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Round Name */}
-                        <div className="mb-3">
+                        {/* <div className="mb-3">
                             <div className="flex items-center justify-between mb-1">
                                 <p className="text-gray-300 text-xs">Round</p>
                                 <label className="flex items-center gap-1 text-xs text-gray-400">
@@ -1499,10 +1497,10 @@ export default function ControllerPage() {
                                     className="w-full px-2 py-1 bg-gray-700 text-white rounded outline-none focus:ring-2 focus:ring-purple-500 text-xs"
                                 />
                             )}
-                        </div>
+                        </div> */}
 
                         {/* Player Inputs */}
-                        {[1, 2, 3, 4].map((num) => {
+                        {/* {[1, 2, 3, 4].map((num) => {
                             const playerKey = `player${num}` as 'player1' | 'player2' | 'player3' | 'player4';
                             const tagKey = `player${num}Tag` as 'player1Tag' | 'player2Tag' | 'player3Tag' | 'player4Tag';
                             const jsonKey = `player${num}UseJson` as 'player1UseJson' | 'player2UseJson' | 'player3UseJson' | 'player4UseJson';
@@ -1573,10 +1571,10 @@ export default function ControllerPage() {
                                     )}
                                 </div>
                             );
-                        })}
+                        })} */}
 
                         {/* Push & Clear Buttons */}
-                        <div className="flex gap-2 mt-2">
+                        {/* <div className="flex gap-2 mt-2">
                             <button
                                 onClick={pushStreamText}
                                 className="flex-1 py-1 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded text-xs transition-colors"
@@ -1596,7 +1594,7 @@ export default function ControllerPage() {
                                 Clear
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Column 4 - Ban/Pick Log */}
@@ -1640,6 +1638,7 @@ export default function ControllerPage() {
             {/* Info */}
             <div className="text-center text-gray-400 text-sm mt-6">
                 <p>Made by PXT with luv &lt;3 (and chatgbt). Ofc Shard and Necros1s also</p>
+                <p>Modified by Shard for APT PIU 2026</p>
             </div>
         </div>
 
