@@ -330,7 +330,7 @@ export default function ControllerPage() {
 
     // Return to song pool selection
     const handleReturnToSongSelection = () => {
-        // setBannedSongs([...bannedSongs, ...pickedSongs]);
+        setBannedSongs([...bannedSongs, ...pickedSongs]);
         setPickedSongs([]);
         setShowBanPick(true);
         setShowFinalResults(false);
@@ -338,7 +338,7 @@ export default function ControllerPage() {
         setCurrentMatchIndex(0);
         setIsMatchPhase(false);
 
-        emitGameEvent('RETURN_TO_SELECTION');
+        emitGameEvent('RETURN_TO_SELECTION', { pickedSongs });
     }
 
     // Reset game
